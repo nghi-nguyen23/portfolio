@@ -4,9 +4,3 @@ body {
 	 */
   font: 100%/1.5 system-ui;
 }
-
-img {
-  width: 400px;
-  max-width: 100%;
-  height: auto;
-}
