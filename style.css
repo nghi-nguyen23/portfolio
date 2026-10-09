@@ -92,3 +92,33 @@ h1, h2, h3, h4, h5, h6 {
   text-wrap: balance;
 }
 
+/* Resume Styling */
+
+.resume section {
+  margin-bottom: 2em;
+}
+
+.resume h2 {
+  border-bottom: 2px solid var(--color-accent);
+  padding-bottom: 0.3em;
+  margin-top: 1.5em;
+}
+
+.resume h3 {
+  margin-bottom: 0.3em;
+}
+
+.resume p {
+  margin-top: 0.3em;
+}
+
+.resume ul {
+  padding-left: 1.5em;
+}
+
+.resume li {
+  margin-bottom: 0.5em;
+}
+
+
+
