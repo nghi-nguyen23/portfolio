@@ -1,0 +1,74 @@
+[
+    {
+        "title": "CrAIyons",
+        "year": "2026",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "A drawing game that uses a CNN to recognize hand-drawn objects and score drawings based on similarity to target objects."
+    },
+    {
+        "title": "JARVIS",
+        "year": "2026",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "A computer vision system that uses MediaPipe and a Temporal Convolutional Network (TCN) to recognize hand gestures and control a web browser through real-time webcam input."
+    },
+    {
+        "title": "CityPulse",
+        "year": "2025",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "An interactive Tableau dashboard that visualizes and compares crime, housing, and transportation trends across New York City using public datasets."
+    },
+    {
+        "title": "Sunt quidem sequi minus.",
+        "year": "2025",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Sed aliquam illo id dolores vel ullam animi laborum laudantium neque expedita facilis nihil, quia libero architecto quos et necessitatibus ducimus quisquam quo veritatis at laboriosam ipsam. Enim, assumenda officia?"
+    },
+    {
+        "title": "At assumenda cum velit.",
+        "year": "2026",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Nisi aspernatur nam porro velit nihil debitis amet numquam beatae distinctio veniam, dolore ut magni, adipisci fuga minus facilis, corporis obcaecati consequuntur maiores! Similique, velit? Asperiores neque minus enim sequi."
+    },
+    {
+        "title": "Accusamus veritatis tenetur quas!",
+        "year": "2024",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Placeat inventore nemo possimus debitis dolores natus ad, porro optio repudiandae doloremque nihil consectetur voluptas quidem illo. Maxime cumque optio necessitatibus, explicabo non dignissimos officiis. Commodi necessitatibus in repellendus asperiores."
+    },
+    {
+        "title": "Accusantium, dolor. Id, tempore?",
+        "year": "2024",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Amet quia quam ex voluptate fugit mollitia unde itaque, laudantium rerum aspernatur nostrum, dicta autem nihil! Id libero consequuntur consectetur ut quo hic totam? Dolorum, provident earum. Qui, excepturi nemo!"
+    },
+    {
+        "title": "Iusto reiciendis repellendus vitae!",
+        "year": "2025",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "At nihil beatae, magnam non dolorum distinctio debitis eos mollitia quod culpa nemo iste porro officia reprehenderit amet veritatis corporis! In nihil quisquam unde vel dolores officia natus ipsa repellat."
+    },
+    {
+        "title": "Ex culpa unde voluptas.",
+        "year": "2026",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Nisi, dolorum sint! Eum quis officiis eius iure deleniti voluptates consectetur architecto porro sit alias magnam, unde vitae velit autem eligendi mollitia iusto maxime, quaerat cumque fugiat iste voluptatem quisquam."
+    },
+    {
+        "title": "Ipsa earum incidunt qui?",
+        "year": "2024",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Maiores, quibusdam non. Commodi quam unde, ratione ducimus doloribus, neque vel totam delectus velit libero quasi odit ea consequuntur illo dicta quos animi deleniti natus blanditiis omnis dolore placeat culpa!"
+    },
+    {
+        "title": "Distinctio ullam fugit repellat.",
+        "year": "2023",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Voluptate tempore velit asperiores autem fugit aut quasi expedita fugiat, in tenetur rem vitae accusamus necessitatibus nobis magnam, mollitia excepturi eligendi quisquam vel incidunt! Cupiditate mollitia pariatur voluptas eveniet asperiores!"
+    },
+    {
+        "title": "Dolorum officia veniam itaque?",
+        "year": "2023",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Architecto dolor, aspernatur dicta fuga quasi distinctio nam asperiores sapiente, vero placeat dignissimos adipisci quaerat expedita maxime? Ullam deleniti quis ducimus iste dolore, officiis nulla in quam, quos magni corrupti."
+    }
+]
