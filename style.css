@@ -135,3 +135,79 @@ h1, h2, h3, h4, h5, h6 {
   font: inherit;
 }
 
+.project-year {
+    color: gray;
+    font-family: Baskerville, serif;
+    font-variant-numeric: oldstyle-nums;
+}
+
+
+.chart-container {
+    display: flex;
+    align-items: center;
+    gap: 2em;
+    flex-wrap: wrap;
+}
+
+#projects-pie-plot {
+    max-width: 20em;
+    margin-block: 2em;
+    overflow: visible;
+    flex-shrink: 0;
+}
+
+.legend {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(9em, 1fr));
+    gap: 1em;
+    flex: 1;
+    padding: 1em;
+    border: 1px solid #ccc;
+    border-radius: 0.5em;
+    list-style: none;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.swatch {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    aspect-ratio: 1;
+    background-color: var(--color);
+    border-radius: 0.25em;
+}
+
+
+.searchBar {
+    width: 100%;
+    padding: 0.5em 1em;
+    margin-block: 1em;
+    border: 1px solid #ccc;
+    border-radius: 0.5em;
+}
+
+#projects-pie-plot path {
+    cursor: pointer;
+    transition: 300ms;
+}
+
+#projects-pie-plot:has(path:hover) path:not(:hover) {
+    opacity: 0.5;
+}
+
+.legend-item {
+    cursor: pointer;
+}
+
+.selected {
+    --color: oklch(60% 45% 0) !important;
+}
+
+path.selected {
+    fill: var(--color);
+}
