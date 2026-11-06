@@ -1,0 +1,133 @@
+
+/* Summary statistics */
+dl.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin: 1.5rem 0;
+}
+
+dl.stats .stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+dl.stats dt {
+  font-size: 0.85rem;
+  color: #888;
+}
+
+dl.stats dd {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* Scatterplot */
+#chart {
+  width: 100%;
+  margin: 2rem 0;
+}
+
+#chart svg {
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.axis-label {
+  fill: currentColor;
+  font-size: 12px;
+}
+
+/* Gridlines */
+.gridlines line {
+  stroke: #999;
+  stroke-opacity: 0.25;
+}
+
+.gridlines path {
+  display: none;
+}
+
+/* Dots */
+.dots circle {
+  fill: steelblue;
+  fill-opacity: 0.7;
+  cursor: pointer;
+  transition: fill-opacity 200ms;
+}
+
+.dots circle:hover {
+  fill-opacity: 1;
+  stroke: #333;
+  stroke-width: 1.5;
+}
+
+.dots circle.selected {
+  fill: #ff6b6b;
+  fill-opacity: 1;
+  stroke: #b91c1c;
+  stroke-width: 1.5;
+}
+
+/* Tooltip */
+dl.info {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.5rem 1rem;
+  margin: 0;
+}
+
+dl.info dt {
+  font-weight: bold;
+  color: #777;
+}
+
+dl.info dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.tooltip {
+  position: fixed;
+  top: 1em;
+  left: 1em;
+  padding: 1rem;
+  border-radius: 8px;
+  background: white;
+  color: #222;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  max-width: 300px;
+  pointer-events: none;
+}
+
+.tooltip[hidden] {
+  display: none;
+}
+
+/* Brush */
+.brush .selection {
+  fill: steelblue;
+  fill-opacity: 0.15;
+  stroke: #333;
+  stroke-dasharray: 5 3;
+}
+
+#selection-count {
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+/* Language breakdown */
+#language-breakdown:empty {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  dl.stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Code Analysis</title>
+
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="style.css">
+
+  <script type="module" src="../global.js"></script>
+  <script type="module" src="main.js"></script>
+</head>
+<body>
+  <h1>Git Commit Analysis</h1>
+  <p>Visualizing my Git commit history with D3.</p>
+
+  <h2>Summary Statistics</h2>
+  <div id="stats"></div>
+
+  <h2>Commits by Time of Day</h2>
+  <p>
+    Each dot represents a commit. Larger dots represent
+    more lines of code. Hover over dots for details
+    or drag to select commits.
+  </p>
+
+  <div id="chart"></div>
+
+  <p id="selection-count">No commits selected</p>
+
+  <h2>Language Breakdown</h2>
+  <dl id="language-breakdown" class="stats"></dl>
+
+  <dl id="commit-tooltip" class="info tooltip" hidden>
+    <dt>Commit</dt>
+    <dd><a id="commit-link" target="_blank"></a></dd>
+
+    <dt>Date</dt>
+    <dd id="commit-date"></dd>
+
+    <dt>Time</dt>
+    <dd id="commit-time"></dd>
+
+    <dt>Author</dt>
+    <dd id="commit-author"></dd>
+
+    <dt>Lines</dt>
+    <dd id="commit-lines"></dd>
+  </dl>
+</body>
+</html>
