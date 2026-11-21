@@ -1,133 +1,239 @@
 
 /* Summary statistics */
-dl.stats {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  margin: 1.5rem 0;
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5em;
 }
 
-dl.stats .stat {
+.stats .stat {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
 }
 
-dl.stats dt {
-  font-size: 0.85rem;
-  color: #888;
+.stats dt {
+  font-size: 0.85em;
+  color: gray;
 }
 
-dl.stats dd {
+.stats dd {
   margin: 0;
-  font-size: 1.5rem;
+  font-size: 1.5em;
   font-weight: bold;
 }
 
-/* Scatterplot */
-#chart {
-  width: 100%;
-  margin: 2rem 0;
+/* Timeline slider */
+.time-filter {
+  display: flex;
+  align-items: baseline;
+  gap: 1em;
+  margin: 2em 0;
 }
 
+.time-filter label {
+  display: flex;
+  flex: 1;
+  align-items: baseline;
+  gap: 1em;
+}
+
+#commit-progress {
+  flex: 1;
+}
+
+#commit-max-time {
+  margin-left: auto;
+  white-space: nowrap;
+}
+
+/* Scatter plot */
 #chart svg {
   width: 100%;
   height: auto;
   overflow: visible;
 }
 
-.axis-label {
-  fill: currentColor;
-  font-size: 12px;
+#chart circle {
+  transition: all 200ms;
+
+  @starting-style {
+    r: 0;
+  }
+}
+
+#chart .dots circle {
+  fill: steelblue;
+  fill-opacity: 0.7;
+  cursor: pointer;
+}
+
+#chart .dots circle:hover {
+  fill-opacity: 1;
+}
+
+#chart .dots circle.selected {
+  fill: orange;
+  fill-opacity: 1;
 }
 
 /* Gridlines */
 .gridlines line {
-  stroke: #999;
-  stroke-opacity: 0.25;
+  stroke: #ddd;
+  stroke-opacity: 0.6;
 }
 
 .gridlines path {
   display: none;
 }
 
-/* Dots */
-.dots circle {
-  fill: steelblue;
-  fill-opacity: 0.7;
-  cursor: pointer;
-  transition: fill-opacity 200ms;
-}
-
-.dots circle:hover {
-  fill-opacity: 1;
-  stroke: #333;
-  stroke-width: 1.5;
-}
-
-.dots circle.selected {
-  fill: #ff6b6b;
-  fill-opacity: 1;
-  stroke: #b91c1c;
-  stroke-width: 1.5;
-}
-
-/* Tooltip */
-dl.info {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 0.5rem 1rem;
-  margin: 0;
-}
-
-dl.info dt {
-  font-weight: bold;
-  color: #777;
-}
-
-dl.info dd {
-  margin: 0;
-  overflow-wrap: anywhere;
-}
-
-.tooltip {
-  position: fixed;
-  top: 1em;
-  left: 1em;
-  padding: 1rem;
-  border-radius: 8px;
-  background: white;
-  color: #222;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
-  z-index: 1000;
-  max-width: 300px;
-  pointer-events: none;
-}
-
-.tooltip[hidden] {
-  display: none;
+.axis-label {
+  font-size: 16px;
+  fill: currentColor;
 }
 
 /* Brush */
 .brush .selection {
   fill: steelblue;
-  fill-opacity: 0.15;
-  stroke: #333;
-  stroke-dasharray: 5 3;
+  fill-opacity: 0.2;
+  stroke: steelblue;
+  stroke-dasharray: 4 3;
 }
 
-#selection-count {
-  font-weight: bold;
-  margin-top: 1rem;
+/* Tooltip */
+#commit-tooltip {
+  position: fixed;
+  z-index: 1000;
+  background: white;
+  color: black;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1em;
+  box-shadow: 0 4px 12px #0002;
+  pointer-events: none;
+  max-width: 300px;
 }
 
-/* Language breakdown */
-#language-breakdown:empty {
+#commit-tooltip[hidden] {
   display: none;
 }
 
-@media (max-width: 600px) {
-  dl.stats {
-    grid-template-columns: repeat(2, 1fr);
+#commit-tooltip dt {
+  font-weight: bold;
+}
+
+#commit-tooltip dd {
+  margin: 0 0 0.5em;
+  overflow-wrap: anywhere;
+}
+
+/* Step 2: File unit visualization */
+#files {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  gap: 1em;
+}
+
+#files > div {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: subgrid;
+  padding-bottom: 0.5em;
+}
+
+#files dt {
+  grid-column: 1;
+  min-width: 0;
+}
+
+#files dt code {
+  overflow-wrap: anywhere;
+}
+
+#files dt small {
+  display: block;
+  font-size: 0.7em;
+  opacity: 0.6;
+  margin-top: 0.3em;
+}
+
+#files dd {
+  grid-column: 2;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: start;
+  align-content: start;
+  gap: 0.15em;
+  padding-top: 0.6em;
+  margin-left: 0;
+}
+
+.loc {
+  display: flex;
+  width: 0.5em;
+  height: 0.5em;
+  flex: 0 0 0.5em;
+  aspect-ratio: 1;
+  background: var(--color);
+  border-radius: 50%;
+}
+
+/* Step 3: Scrollytelling */
+#scrolly-1 {
+  position: relative;
+  display: flex;
+  gap: 1rem;
+}
+
+#scrolly-1 > * {
+  flex: 1;
+  min-width: 0;
+}
+
+#scatter-story {
+  position: relative;
+}
+
+#scatter-plot {
+  position: sticky;
+  top: 20vh;
+  height: fit-content;
+  align-self: flex-start;
+}
+
+/* Commit descriptions */
+.step {
+  padding: 1.25em 1em;
+  padding-bottom: 20vh;
+  opacity: 0.4;
+  transition: opacity 300ms;
+}
+
+.step.active {
+  opacity: 1;
+}
+
+/* Smaller screens */
+@media (max-width: 700px) {
+  #scrolly-1 {
+    flex-direction: column;
+  }
+
+  #scatter-plot {
+    order: -1;
+    height: 40vh;
+    background: white;
+    z-index: 2;
+  }
+
+  .step {
+    padding-bottom: 50vh;
+  }
+
+  .time-filter {
+    flex-wrap: wrap;
+  }
+
+  #files {
+    grid-template-columns: 1fr 3fr;
   }
 }

@@ -12,9 +12,19 @@
   <script type="module" src="../global.js"></script>
   <script type="module" src="main.js"></script>
 </head>
+
 <body>
   <h1>Git Commit Analysis</h1>
   <p>Visualizing my Git commit history with D3.</p>
+
+  <div class="time-filter">
+    <label for="commit-progress">
+      Show commits until:
+      <input type="range" id="commit-progress"
+             min="0" max="100" value="100">
+    </label>
+    <time id="commit-max-time"></time>
+  </div>
 
   <h2>Summary Statistics</h2>
   <div id="stats"></div>
@@ -22,16 +32,28 @@
   <h2>Commits by Time of Day</h2>
   <p>
     Each dot represents a commit. Larger dots represent
-    more lines of code. Hover over dots for details
-    or drag to select commits.
+    more lines of code. Hover for details or drag to select commits.
   </p>
 
-  <div id="chart"></div>
+  <div id="scrolly-1">
+    <div id="scatter-story"></div>
 
-  <p id="selection-count">No commits selected</p>
+    <div id="scatter-plot">
+      <div id="chart"></div>
 
-  <h2>Language Breakdown</h2>
-  <dl id="language-breakdown" class="stats"></dl>
+      <p id="selection-count">No commits selected</p>
+
+      <h3>Language Breakdown</h3>
+      <dl id="language-breakdown" class="stats"></dl>
+    </div>
+  </div>
+
+  <h2>File Sizes</h2>
+  <p>
+    Each dot represents one line of code.
+    Colors indicate different technologies.
+  </p>
+  <dl id="files"></dl>
 
   <dl id="commit-tooltip" class="info tooltip" hidden>
     <dt>Commit</dt>
